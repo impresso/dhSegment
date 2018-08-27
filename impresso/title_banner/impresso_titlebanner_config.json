@@ -1,0 +1,26 @@
+{
+  "training_params" : {
+      "learning_rate": 5e-5,
+      "batch_size": 16,
+      "make_patches": true,
+      "training_margin" : 15,
+      "n_epochs": 30,
+      "data_augmentation" : true,
+      "data_augmentation_max_rotation" : 0.2,
+      "data_augmentation_max_scaling" : 0.2,
+      "data_augmentation_flip_lr": false,
+      "data_augmentation_flip_ud": false,
+      "data_augmentation_color": false,
+      "evaluate_every_epoch" : 10,
+      "input_resized_size": 10e6
+  },
+  "pretrained_model_name" : "resnet50",
+  "prediction_type": "CLASSIFICATION",
+  "image_train_dir" : "/home/ehrmann/impresso/code/impresso-dhsegment/experiments/JDG/title_banner/images/train",
+  "label_train_dir" : "/home/ehrmann/impresso/code/impresso-dhsegment/experiments/JDG/title_banner/labels/train",
+  "image_eval_dir" : "/home/ehrmann/impresso/code/impresso-dhsegment/experiments/JDG/title_banner/images/dev",
+  "label_eval_dir" : "/home/ehrmann/impresso/code/impresso-dhsegment/experiments/JDG/title_banner/labels/dev",
+  "classes_file" : "/home/ehrmann/impresso/code/impresso-dhsegment/experiments/JDG/title_banner/classes.txt",
+  "model_output_dir" : "impresso/title_banner/title_banner_model",
+  "gpu" : "0"
+}
