@@ -74,12 +74,14 @@ def run(train_dir, eval_dir, model_output_dir, gpu, training_params, _config):
 
     #train_images_dir, train_labels_dir = os.path.join(train_dir, 'images'), os.path.join(train_dir, 'labels')
     train_images_dir = image_train_dir
-    train_labels_dir = label_train_dir 
+    train_labels_dir = label_train_dir
 
     # Check if training dir exists
     assert os.path.isdir(train_images_dir)
     if eval_dir is not None:
-        eval_images_dir, eval_labels_dir = os.path.join(eval_dir, 'images'), os.path.join(eval_dir, 'labels')
+        #eval_images_dir, eval_labels_dir = os.path.join(eval_dir, 'images'), os.path.join(eval_dir, 'labels')
+        eval_images_dir = image_eval_dir
+        eval_labels_dir = label_eval_dir
         assert os.path.isdir(eval_images_dir)
 
     for i in trange(0, training_params.n_epochs, training_params.evaluate_every_epoch, desc='Evaluated epochs'):
