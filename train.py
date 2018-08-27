@@ -43,7 +43,8 @@ def default_config():
 
 
 @ex.automain
-def run(train_dir, eval_dir, model_output_dir, gpu, training_params, _config):
+def run(image_train_dir, label_train_dir, image_eval_dir, image_label_dir, model_output_dir, gpu, training_params,
+            _config):
 
     # Create output directory
     if not os.path.isdir(model_output_dir):
