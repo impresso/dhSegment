@@ -102,7 +102,7 @@ def run(image_train_dir, label_train_dir, image_eval_dir, image_label_dir, model
         exported_path = exported_path.decode()
         timestamp_exported = os.path.split(exported_path)[-1]
 
-        if eval_dir is not None:
+        if image_eval_dir is not None:
             try:  # There should be no evaluation when input_resize_size is too big (e.g -1)
                 # Save predictions
                 filenames_evaluation = glob(os.path.join(eval_images_dir, '*.jpg')) \
