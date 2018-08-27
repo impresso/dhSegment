@@ -20,8 +20,10 @@ ex = Experiment('dhSegment_experiment')
 
 @ex.config
 def default_config():
-    train_dir = None  # Directory with training data
-    eval_dir = None  # Directory with validation data
+    image_train_dir = None  # Directory with training data
+    label_train_dir = None  # Directory with training data
+    image_eval_dir = None  # Directory with validation data
+    label_eval_dir = None  # Directory with validation data
     model_output_dir = None  # Directory to output tf model
     restore_model = False  # Set to true to continue training
     classes_file = None  # txt file with classes values (unused for REGRESSION)
@@ -70,7 +72,10 @@ def run(train_dir, eval_dir, model_output_dir, gpu, training_params, _config):
     estimator = tf.estimator.Estimator(estimator_fn.model_fn, model_dir=model_output_dir,
                                        params=_config, config=estimator_config)
 
-    train_images_dir, train_labels_dir = os.path.join(train_dir, 'images'), os.path.join(train_dir, 'labels')
+    #train_images_dir, train_labels_dir = os.path.join(train_dir, 'images'), os.path.join(train_dir, 'labels')
+    train_images_dir = image_train_dir
+    train_labels_dir = label_train_dir 
+
     # Check if training dir exists
     assert os.path.isdir(train_images_dir)
     if eval_dir is not None:
